@@ -14,6 +14,9 @@ RUN npm install
 
 # Bundle app source
 #COPY . .
+RUN npm install pm2@3 -g
 
 EXPOSE 7777
-CMD [ "npm", "start" ]
+CMD ["pm2-runtime", "start", "server.js"]
+
+#CMD [ "npm", "start" ]
